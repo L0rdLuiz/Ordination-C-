@@ -20,14 +20,14 @@ void preencherVetor(int* vetor, int TAM, int caso) {
             }
             break;
 
-        case 3: // AleatÛrio
+        case 3: // Aleat√≥rio
             for (int i = 0; i < TAM; i++) {
                 vetor[i] = rand() % 100 + 1;
             }
             break;
 
         default:
-            cout << "OpÁ„o inv·lida para ordenaÁ„o." << endl;
+            cout << "Op√ß√£o inv√°lida para ordena√ß√£o." << endl;
             break;
     }
 }
@@ -109,17 +109,17 @@ void heapify(int* vetor, int TAM, int i) {
     int left = 2 * i + 1;  // Filho esquerdo
     int right = 2 * i + 2; // Filho direito
 
-    // Verifica se o filho esquerdo È maior que a raiz
+    // Verifica se o filho esquerdo √© maior que a raiz
     if (left < TAM && vetor[left] > vetor[largest]) {
         largest = left;
     }
 
-    // Verifica se o filho direito È maior que o maior atÈ agora
+    // Verifica se o filho direito √© maior que o maior at√© agora
     if (right < TAM && vetor[right] > vetor[largest]) {
         largest = right;
     }
 
-    // Troca e continua para o sub·rvore afetado
+    // Troca e continua para o sub√°rvore afetado
     if (largest != i) {
         swap(vetor[i], vetor[largest]);
         heapify(vetor, TAM, largest);
@@ -127,7 +127,7 @@ void heapify(int* vetor, int TAM, int i) {
 }
 
 void heapSort(int* vetor, int TAM) {
-    // ConstrÛi o heap m·ximo
+    // Constr√≥i o heap m√°ximo
     for (int i = TAM / 2 - 1; i >= 0; i--) {
         heapify(vetor, TAM, i);
     }
@@ -146,7 +146,7 @@ void merge(int* vetor, int left, int mid, int right) {
     int* L = new int[n1];
     int* R = new int[n2];
 
-    // Copia os dados para os arrays tempor·rios
+    // Copia os dados para os arrays tempor√°rios
     for (int i = 0; i < n1; i++) {
         L[i] = vetor[left + i];
     }
@@ -154,7 +154,7 @@ void merge(int* vetor, int left, int mid, int right) {
         R[j] = vetor[mid + 1 + j];
     }
 
-    // Une os arrays tempor·rios
+    // Une os arrays tempor√°rios
     int i = 0, j = 0, k = left;
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
@@ -206,8 +206,8 @@ int main() {
 
     do {
         system("cls");
-        cout << "Algoritmos de OrdenaÁ„o de Vetores" << endl << endl;
-        cout << "Selecione um mÈtodo:" << endl << endl;
+        cout << "Algoritmos de Ordena√ß√£o de Vetores" << endl << endl;
+        cout << "Selecione um m√©todo:" << endl << endl;
         cout << "1. Insertion Sort" << endl;
         cout << "2. Shellsort" << endl;
         cout << "3. Bubble Sort" << endl;
@@ -222,27 +222,27 @@ int main() {
             case 1: {
                 // Insertion Sort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -260,12 +260,12 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do Insertion Sort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do Insertion Sort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
@@ -273,27 +273,27 @@ int main() {
             case 2: {
                 // Shellsort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -311,39 +311,39 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do ShellSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do ShellSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
             case 3: {
                 // Bubble sort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -366,34 +366,34 @@ int main() {
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do bubbleSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do bubbleSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
             case 4:{
-                // Selection Sort
+                // QuickSort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -411,39 +411,39 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do QuickSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do QuickSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
             case 5:{
-                // Quick sort
+                // Selection Sort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -461,39 +461,39 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do SelectionSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do SelectionSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
             case 6:{
                 // HeapSort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -511,39 +511,39 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do HeapSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do HeapSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
             case 7:{
                 // MergeSort
                 int TAM;
-                cout << "Qual tamanho do vetor vocÍ quer?" << endl;
+                cout << "Qual tamanho do vetor voc√™ quer?" << endl;
                 cin >> TAM;
 
                 if (TAM <= 0) {
-                    cout << "Tamanho inv·lido. Tente novamente." << endl;
+                    cout << "Tamanho inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
 
-                cout << "Qual ordenaÁ„o vocÍ quer?" << endl;
+                cout << "Qual ordena√ß√£o voc√™ quer?" << endl;
                 cout << "1. Melhor caso (Ordenado)" << endl;
                 cout << "2. Pior caso (Decrescente)" << endl;
-                cout << "3. AleatÛrio" << endl;
+                cout << "3. Aleat√≥rio" << endl;
                 int caso;
                 cin >> caso;
 
-                cout << "Quantas vezes vocÍ quer repetir o processo para calcular a mÈdia?" << endl;
+                cout << "Quantas vezes voc√™ quer repetir o processo para calcular a m√©dia?" << endl;
                 cin >> repeticoes;
 
                 if (repeticoes <= 0) {
-                    cout << "N˙mero de repetiÁıes inv·lido. Tente novamente." << endl;
+                    cout << "N√∫mero de repeti√ß√µes inv√°lido. Tente novamente." << endl;
                     system("pause");
                     break;
                 }
@@ -561,12 +561,12 @@ int main() {
                     double duracao = duration_cast<microseconds>(fim - inicio).count() / 1000.0; // Em milissegundos
                     tempoTotal += duracao;
 
-                    delete[] vetor; // Liberar memÛria alocada
+                    delete[] vetor; // Liberar mem√≥ria alocada
                 }
 
                 double tempoMedio = tempoTotal / repeticoes;
 
-                cout << "Tempo mÈdio de execuÁ„o do mergeSort: " << tempoMedio << " ms" << endl;
+                cout << "Tempo m√©dio de execu√ß√£o do mergeSort: " << tempoMedio << " ms" << endl;
                 system("pause");
                 break;
             }
@@ -577,12 +577,12 @@ int main() {
                 break;
 
             default:
-                cout << "OpÁ„o inv·lida. Tente novamente." << endl;
+                cout << "Op√ß√£o inv√°lida. Tente novamente." << endl;
                 system("pause");
                 break;
         }
     } while (menu);
 
-    cout << "Encerrando o programa. AtÈ mais!" << endl;
+    cout << "Encerrando o programa. At√© mais!" << endl;
     return 0;
 }
